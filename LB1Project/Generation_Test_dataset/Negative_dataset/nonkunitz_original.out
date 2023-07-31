@@ -1,0 +1,39 @@
+    4.4e-24   89.1   8.9    4.7e-24   89.0   8.9    1.0  1  sp|C0HLA7|MAMB4_DENVI      Mambaquaretin-4 OS=Dendroaspis vir
+    4.7e-24   89.0   9.4      5e-24   88.9   9.4    1.0  1  sp|C0HLA5|MAMB2_DENVI      Mambaquaretin-2 OS=Dendroaspis vir
+      1e-23   87.9   9.9    1.1e-23   87.8   9.9    1.0  1  sp|C0HLA6|MAMB3_DENPO      Mambaquaretin-3 OS=Dendroaspis pol
+    2.2e-23   86.9   8.8    2.3e-23   86.8   8.8    1.0  1  sp|C0HLA8|MAMB5_DENJA      Mambaquaretin-5 OS=Dendroaspis jam
+      1e-22   84.7   7.6    1.1e-22   84.7   7.6    1.0  1  sp|C0HLA9|MAMB6_DENVI      Mambaquaretin-6 OS=Dendroaspis vir
+    2.3e-14   58.0   9.5    2.5e-14   57.9   9.5    1.0  1  sp|C0HLB0|MAMB9_DENVI      Mambaquaretin-9 OS=Dendroaspis vir
+     0.0025   22.6   0.1     0.0026   22.6   0.1    1.1  1  sp|P84555|TIQ7_RHISA       Kunitz-type serine protease inhibi
+      0.015   20.1   1.7      0.027   19.3   1.7    1.5  1  sp|Q09JW3|KUNP2_ARGMO      Monogrin 2 OS=Argas monolakensis O
+      0.027   19.3   0.2      0.027   19.3   0.2    1.0  1  sp|P0DJ63|VKT_OXYMI        Kunitz-type serine protease inhibi
+      0.028   19.3   3.7       0.43   15.5   0.7    2.4  2  sp|Q8WPG5|KUNI_ORNKA       Thrombin inhibitor savignin OS=Orn
+      0.039   18.8   0.4      0.039   18.8   0.4    1.0  1  sp|P83605|BMTI4_RHIMP      Kunitz-type serine protease inhibi
+       0.05   18.5   4.2      0.092   17.6   4.2    1.6  1  sp|Q09JW4|KUNP1_ARGMO      Monogrin 1 OS=Argas monolakensis O
+      0.061   18.2   3.5      0.061   18.2   3.5    1.6  2  sp|C5H8E7|TICK1_RHIAP      R.appendiculatus Kunitz/BPTI-like 
+       0.13   17.1   0.1       0.13   17.1   0.1    1.0  1  sp|P85039|VKTC8_DABSI      Kunitz-type serine protease inhibi
+       0.92   14.4   0.1       0.93   14.4   0.1    1.1  1  sp|P84556|TIS5_RHISA       Kunitz-type serine protease inhibi
+        1.2   14.1   7.7        1.3   13.9   1.4    2.9  3  sp|P56409|KUNI_ORNMO       Ornithodorin OS=Ornithodoros mouba
+        1.2   14.1   0.1        1.2   14.1   0.1    1.0  1  sp|P85040|VKTC9_DABSI      Kunitz-type serine protease inhibi
+        1.8   13.5   0.1        4.3   12.3   0.1    1.6  1  sp|Q91736|EPB1B_XENLA      Ephrin type-B receptor 1-B (Fragme
+        1.9   13.4   0.1        4.4   12.2   0.1    1.6  1  sp|Q91571|EPB1A_XENLA      Ephrin type-B receptor 1-A OS=Xeno
+        2.1   13.2   0.0        5.3   12.0   0.0    1.7  1  sp|P09759|EPHB1_RAT        Ephrin type-B receptor 1 OS=Rattus
+        2.1   13.2   0.0        5.3   12.0   0.0    1.7  1  sp|Q8CBF3|EPHB1_MOUSE      Ephrin type-B receptor 1 OS=Mus mu
+        2.2   13.2   0.0        5.3   12.0   0.0    1.7  1  sp|P54762|EPHB1_HUMAN      Ephrin type-B receptor 1 OS=Homo s
+        2.2   13.2   0.1        2.2   13.2   0.1    1.0  1  sp|P0DV02|VKT2L_HETCR      PI-stichotoxin-Hcr2l (Fragment) OS
+        2.4   13.1   0.0        5.3   12.0   0.0    1.6  1  sp|Q07494|EPHB1_CHICK      Ephrin type-B receptor 1 (Fragment
+        2.6   13.0   8.4        3.6   12.5   8.4    1.4  1  sp|P36235|KUNPG_ORNMO      Disagregin OS=Ornithodoros moubata
+        2.6   13.0   0.3        2.6   13.0   0.3    1.0  1  sp|P0DM47|VKT_MICAT        Protease inhibitor (Fragment) OS=M
+        2.8   12.9   1.0          3   12.8   1.0    1.1  1  sp|P83604|BMTI3_RHIMP      Kunitz-type serine protease inhibi
+        4.5   12.2   0.1        8.3   11.4   0.1    1.4  1  sp|P71089|YGAJ_BACSU       Uncharacterized peptidase YgaJ OS=
+        4.6   12.2   0.7         13   10.8   0.7    1.7  1  sp|P78746|CHSD_ASPFU       Chitin synthase D OS=Neosartorya f
+        5.5   11.9   0.2         15   10.6   0.2    1.7  1  sp|P28693|EPHB2_CHICK      Ephrin type-B receptor 2 OS=Gallus
+        6.3   11.8   0.1        6.3   11.8   0.1    1.0  1  sp|P0DV07|VT2K_HETCR       PI-stichotoxin-Hcr2k (Fragment) OS
+        6.4   11.7   0.1         21   10.1   0.1    1.9  1  sp|Q91845|EPA4A_XENLA      Ephrin type-A receptor 4-A OS=Xeno
+        6.4   11.7   0.1         21   10.1   0.1    1.9  1  sp|Q91694|EPA4B_XENLA      Ephrin type-A receptor 4-B OS=Xeno
+        6.5   11.7   0.1         21   10.0   0.1    1.9  1  sp|P29323|EPHB2_HUMAN      Ephrin type-B receptor 2 OS=Homo s
+        6.6   11.7   0.2         15   10.6   0.2    1.6  1  sp|Q90344|EPHB2_COTJA      Ephrin type-B receptor 2 OS=Coturn
+        7.4   11.5   1.2         21   10.1   0.1    2.3  2  sp|Q07496|EPHA4_CHICK      Ephrin type-A receptor 4 OS=Gallus
+        8.8   11.3   2.4         16   10.4   2.4    1.4  1  sp|P40500|YII9_YEAST       Uncharacterized membrane protein Y
+        8.9   11.3   0.1         23    9.9   0.1    1.7  1  sp|P54763|EPHB2_MOUSE      Ephrin type-B receptor 2 OS=Mus mu
+        9.9   11.1   1.8         27    9.7   0.1    2.4  2  sp|Q03137|EPHA4_MOUSE      Ephrin type-A receptor 4 OS=Mus mu

@@ -1,0 +1,277 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  ali_3d.hmm
+# target sequence database:        nonkunitz_original.fasta
+# output directed to file:         nonkunitz_original.search
+# show alignments in output:       no
+# Max sensitivity mode:            on [all heuristic filters off]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       aln_3d.fasta  [M=58]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                  Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                  -----------
+    4.4e-24   89.1   8.9    4.7e-24   89.0   8.9    1.0  1  sp|C0HLA7|MAMB4_DENVI      Mambaquaretin-4 OS=Dendroaspis vir
+    4.7e-24   89.0   9.4      5e-24   88.9   9.4    1.0  1  sp|C0HLA5|MAMB2_DENVI      Mambaquaretin-2 OS=Dendroaspis vir
+      1e-23   87.9   9.9    1.1e-23   87.8   9.9    1.0  1  sp|C0HLA6|MAMB3_DENPO      Mambaquaretin-3 OS=Dendroaspis pol
+    2.2e-23   86.9   8.8    2.3e-23   86.8   8.8    1.0  1  sp|C0HLA8|MAMB5_DENJA      Mambaquaretin-5 OS=Dendroaspis jam
+      1e-22   84.7   7.6    1.1e-22   84.7   7.6    1.0  1  sp|C0HLA9|MAMB6_DENVI      Mambaquaretin-6 OS=Dendroaspis vir
+    2.3e-14   58.0   9.5    2.5e-14   57.9   9.5    1.0  1  sp|C0HLB0|MAMB9_DENVI      Mambaquaretin-9 OS=Dendroaspis vir
+     0.0025   22.6   0.1     0.0026   22.6   0.1    1.1  1  sp|P84555|TIQ7_RHISA       Kunitz-type serine protease inhibi
+  ------ inclusion threshold ------
+      0.015   20.1   1.7      0.027   19.3   1.7    1.5  1  sp|Q09JW3|KUNP2_ARGMO      Monogrin 2 OS=Argas monolakensis O
+      0.027   19.3   0.2      0.027   19.3   0.2    1.0  1  sp|P0DJ63|VKT_OXYMI        Kunitz-type serine protease inhibi
+      0.028   19.3   3.7       0.43   15.5   0.7    2.4  2  sp|Q8WPG5|KUNI_ORNKA       Thrombin inhibitor savignin OS=Orn
+      0.039   18.8   0.4      0.039   18.8   0.4    1.0  1  sp|P83605|BMTI4_RHIMP      Kunitz-type serine protease inhibi
+       0.05   18.5   4.2      0.092   17.6   4.2    1.6  1  sp|Q09JW4|KUNP1_ARGMO      Monogrin 1 OS=Argas monolakensis O
+      0.061   18.2   3.5      0.061   18.2   3.5    1.6  2  sp|C5H8E7|TICK1_RHIAP      R.appendiculatus Kunitz/BPTI-like 
+       0.13   17.1   0.1       0.13   17.1   0.1    1.0  1  sp|P85039|VKTC8_DABSI      Kunitz-type serine protease inhibi
+       0.92   14.4   0.1       0.93   14.4   0.1    1.1  1  sp|P84556|TIS5_RHISA       Kunitz-type serine protease inhibi
+        1.2   14.1   7.7        1.3   13.9   1.4    2.9  3  sp|P56409|KUNI_ORNMO       Ornithodorin OS=Ornithodoros mouba
+        1.2   14.1   0.1        1.2   14.1   0.1    1.0  1  sp|P85040|VKTC9_DABSI      Kunitz-type serine protease inhibi
+        1.8   13.5   0.1        4.3   12.3   0.1    1.6  1  sp|Q91736|EPB1B_XENLA      Ephrin type-B receptor 1-B (Fragme
+        1.9   13.4   0.1        4.4   12.2   0.1    1.6  1  sp|Q91571|EPB1A_XENLA      Ephrin type-B receptor 1-A OS=Xeno
+        2.1   13.2   0.0        5.3   12.0   0.0    1.7  1  sp|P09759|EPHB1_RAT        Ephrin type-B receptor 1 OS=Rattus
+        2.1   13.2   0.0        5.3   12.0   0.0    1.7  1  sp|Q8CBF3|EPHB1_MOUSE      Ephrin type-B receptor 1 OS=Mus mu
+        2.2   13.2   0.0        5.3   12.0   0.0    1.7  1  sp|P54762|EPHB1_HUMAN      Ephrin type-B receptor 1 OS=Homo s
+        2.2   13.2   0.1        2.2   13.2   0.1    1.0  1  sp|P0DV02|VKT2L_HETCR      PI-stichotoxin-Hcr2l (Fragment) OS
+        2.4   13.1   0.0        5.3   12.0   0.0    1.6  1  sp|Q07494|EPHB1_CHICK      Ephrin type-B receptor 1 (Fragment
+        2.6   13.0   8.4        3.6   12.5   8.4    1.4  1  sp|P36235|KUNPG_ORNMO      Disagregin OS=Ornithodoros moubata
+        2.6   13.0   0.3        2.6   13.0   0.3    1.0  1  sp|P0DM47|VKT_MICAT        Protease inhibitor (Fragment) OS=M
+        2.8   12.9   1.0          3   12.8   1.0    1.1  1  sp|P83604|BMTI3_RHIMP      Kunitz-type serine protease inhibi
+        4.5   12.2   0.1        8.3   11.4   0.1    1.4  1  sp|P71089|YGAJ_BACSU       Uncharacterized peptidase YgaJ OS=
+        4.6   12.2   0.7         13   10.8   0.7    1.7  1  sp|P78746|CHSD_ASPFU       Chitin synthase D OS=Neosartorya f
+        5.5   11.9   0.2         15   10.6   0.2    1.7  1  sp|P28693|EPHB2_CHICK      Ephrin type-B receptor 2 OS=Gallus
+        6.3   11.8   0.1        6.3   11.8   0.1    1.0  1  sp|P0DV07|VT2K_HETCR       PI-stichotoxin-Hcr2k (Fragment) OS
+        6.4   11.7   0.1         21   10.1   0.1    1.9  1  sp|Q91845|EPA4A_XENLA      Ephrin type-A receptor 4-A OS=Xeno
+        6.4   11.7   0.1         21   10.1   0.1    1.9  1  sp|Q91694|EPA4B_XENLA      Ephrin type-A receptor 4-B OS=Xeno
+        6.5   11.7   0.1         21   10.0   0.1    1.9  1  sp|P29323|EPHB2_HUMAN      Ephrin type-B receptor 2 OS=Homo s
+        6.6   11.7   0.2         15   10.6   0.2    1.6  1  sp|Q90344|EPHB2_COTJA      Ephrin type-B receptor 2 OS=Coturn
+        7.4   11.5   1.2         21   10.1   0.1    2.3  2  sp|Q07496|EPHA4_CHICK      Ephrin type-A receptor 4 OS=Gallus
+        8.8   11.3   2.4         16   10.4   2.4    1.4  1  sp|P40500|YII9_YEAST       Uncharacterized membrane protein Y
+        8.9   11.3   0.1         23    9.9   0.1    1.7  1  sp|P54763|EPHB2_MOUSE      Ephrin type-B receptor 2 OS=Mus mu
+        9.9   11.1   1.8         27    9.7   0.1    2.4  2  sp|Q03137|EPHA4_MOUSE      Ephrin type-A receptor 4 OS=Mus mu
+
+
+Domain annotation for each sequence:
+>> sp|C0HLA7|MAMB4_DENVI  Mambaquaretin-4 OS=Dendroaspis viridis OX=8621 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   89.0   8.9   3.2e-28   4.7e-24       2      57 ..       1      56 [.       1      57 [] 0.98
+
+>> sp|C0HLA5|MAMB2_DENVI  Mambaquaretin-2 OS=Dendroaspis viridis OX=8621 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   88.9   9.4   3.4e-28     5e-24       2      57 ..       1      56 [.       1      57 [] 0.98
+
+>> sp|C0HLA6|MAMB3_DENPO  Mambaquaretin-3 OS=Dendroaspis polylepis polylepis OX=8620 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   87.8   9.9   7.7e-28   1.1e-23       2      57 ..       1      56 [.       1      57 [] 0.98
+
+>> sp|C0HLA8|MAMB5_DENJA  Mambaquaretin-5 OS=Dendroaspis jamesoni kaimosae OX=8619 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   86.8   8.8   1.6e-27   2.3e-23       2      57 ..       1      56 [.       1      57 [] 0.98
+
+>> sp|C0HLA9|MAMB6_DENVI  Mambaquaretin-6 OS=Dendroaspis viridis OX=8621 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   84.7   7.6   7.4e-27   1.1e-22       2      57 ..       1      56 [.       1      57 [] 0.98
+
+>> sp|C0HLB0|MAMB9_DENVI  Mambaquaretin-9 OS=Dendroaspis viridis OX=8621 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   57.9   9.5   1.7e-18   2.5e-14       2      56 ..       1      54 [.       1      56 [] 0.94
+
+>> sp|P84555|TIQ7_RHISA  Kunitz-type serine protease inhibitor RsTIQ7 (Fragment) OS=Rhipicephalus sanguineus OX=34632 PE
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   22.6   0.1   1.8e-07    0.0026       5      26 ..       6      27 ..       3      29 .] 0.89
+
+>> sp|Q09JW3|KUNP2_ARGMO  Monogrin 2 OS=Argas monolakensis OX=34602 GN=AM-30B PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   19.3   1.7   1.9e-06     0.027      19      57 ..      43      83 ..      31      84 .. 0.79
+
+>> sp|P0DJ63|VKT_OXYMI  Kunitz-type serine protease inhibitor OMI (Fragment) OS=Oxyuranus microlepidotus OX=111177 PE=1 
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   19.3   0.2   1.9e-06     0.027       4      19 ..       2      17 .]       1      17 [] 0.92
+
+>> sp|Q8WPG5|KUNI_ORNKA  Thrombin inhibitor savignin OS=Ornithodoros kalahariensis OX=1580572 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?    4.4   0.1     0.087   1.3e+03      46      56 ..      56      66 ..      53      68 .. 0.91
+   2 ?   15.5   0.7   2.9e-05      0.43      14      57 ..      88     130 ..      79     131 .. 0.87
+
+>> sp|P83605|BMTI4_RHIMP  Kunitz-type serine protease inhibitor 4 (Fragment) OS=Rhipicephalus microplus OX=6941 PE=1 SV=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   18.8   0.4   2.7e-06     0.039       3      23 ..       5      25 .]       3      25 .] 0.94
+
+>> sp|Q09JW4|KUNP1_ARGMO  Monogrin 1 OS=Argas monolakensis OX=34602 GN=AM-30A PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   17.6   4.2   6.3e-06     0.092      18      57 ..      22      63 ..       4      64 .. 0.85
+
+>> sp|C5H8E7|TICK1_RHIAP  R.appendiculatus Kunitz/BPTI-like protein OS=Rhipicephalus appendiculatus OX=34631 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   -1.0   0.1         4   5.8e+04       9      17 ..      37      45 ..      30      47 .. 0.68
+   2 ?   18.2   3.5   4.2e-06     0.061       3      57 ..      46      97 ..      44      98 .] 0.95
+
+>> sp|P85039|VKTC8_DABSI  Kunitz-type serine protease inhibitor C8 (Fragment) OS=Daboia siamensis OX=343250 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   17.1   0.1   8.9e-06      0.13       2      22 ..       3      23 .]       2      23 .] 0.93
+
+>> sp|P84556|TIS5_RHISA  Kunitz-type serine protease inhibitor RsTIS5 (Fragment) OS=Rhipicephalus sanguineus OX=34632 PE
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   14.4   0.1   6.4e-05      0.93       4      19 ..       9      24 ..       6      25 .] 0.90
+
+>> sp|P56409|KUNI_ORNMO  Ornithodorin OS=Ornithodoros moubata OX=6938 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   -2.0   0.0       8.5   1.2e+05      16      23 ..      16      23 ..       4      28 .. 0.57
+   2 ?    3.1   0.2      0.22   3.1e+03      46      56 ..      40      50 ..      37      52 .. 0.91
+   3 ?   13.9   1.4     9e-05       1.3      14      57 ..      72     114 ..      61     115 .. 0.85
+
+>> sp|P85040|VKTC9_DABSI  Kunitz-type serine protease inhibitor C9 (Fragment) OS=Daboia siamensis OX=343250 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   14.1   0.1   8.2e-05       1.2       2      17 ..       3      18 .]       2      18 .] 0.91
+
+>> sp|Q91736|EPB1B_XENLA  Ephrin type-B receptor 1-B (Fragment) OS=Xenopus laevis OX=8355 GN=ephb1-b PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   12.3   0.1   0.00029       4.3       3      27 ..      12      36 ..      10      42 .. 0.89
+
+>> sp|Q91571|EPB1A_XENLA  Ephrin type-B receptor 1-A OS=Xenopus laevis OX=8355 GN=ephb1-a PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   12.2   0.1    0.0003       4.4       3      27 ..      96     120 ..      94     130 .. 0.89
+
+>> sp|P09759|EPHB1_RAT  Ephrin type-B receptor 1 OS=Rattus norvegicus OX=10116 GN=Ephb1 PE=1 SV=2
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   12.0   0.0   0.00036       5.3       3      26 ..      94     117 ..      92     124 .. 0.89
+
+>> sp|Q8CBF3|EPHB1_MOUSE  Ephrin type-B receptor 1 OS=Mus musculus OX=10090 GN=Ephb1 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   12.0   0.0   0.00036       5.3       3      26 ..      94     117 ..      92     124 .. 0.89
+
+>> sp|P54762|EPHB1_HUMAN  Ephrin type-B receptor 1 OS=Homo sapiens OX=9606 GN=EPHB1 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   12.0   0.0   0.00036       5.3       3      26 ..      94     117 ..      92     124 .. 0.89
+
+>> sp|P0DV02|VKT2L_HETCR  PI-stichotoxin-Hcr2l (Fragment) OS=Heteractis crispa OX=175771 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   13.2   0.1   0.00015       2.2       4      17 ..       2      15 .]       1      15 [] 0.92
+
+>> sp|Q07494|EPHB1_CHICK  Ephrin type-B receptor 1 (Fragment) OS=Gallus gallus OX=9031 GN=EPHB1 PE=2 SV=2
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   12.0   0.0   0.00036       5.3       3      26 ..      75      98 ..      73     105 .. 0.89
+
+>> sp|P36235|KUNPG_ORNMO  Disagregin OS=Ornithodoros moubata OX=6938 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   12.5   8.4   0.00024       3.6      19      57 ..      20      59 ..       3      60 .] 0.89
+
+>> sp|P0DM47|VKT_MICAT  Protease inhibitor (Fragment) OS=Micrurus altirostris OX=129457 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   13.0   0.3   0.00018       2.6       3      15 ..       3      15 .]       1      15 [] 0.94
+
+>> sp|P83604|BMTI3_RHIMP  Kunitz-type serine protease inhibitor 3 (Fragment) OS=Rhipicephalus microplus OX=6941 PE=1 SV=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   12.8   1.0   0.00021         3       4      24 ..       5      26 ..       3      27 .] 0.81
+
+>> sp|P71089|YGAJ_BACSU  Uncharacterized peptidase YgaJ OS=Bacillus subtilis (strain 168) OX=224308 GN=ygaJ PE=3 SV=2
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   11.4   0.1   0.00057       8.3       2      32 ..      33      63 ..      32      64 .. 0.91
+
+>> sp|P78746|CHSD_ASPFU  Chitin synthase D OS=Neosartorya fumigata (strain ATCC MYA-4609 / Af293 / CBS 101355 / FGSC A11
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   10.8   0.7   0.00088        13      19      40 ..     307     329 ..     304     337 .. 0.86
+
+>> sp|P28693|EPHB2_CHICK  Ephrin type-B receptor 2 OS=Gallus gallus OX=9031 GN=EPHB2 PE=1 SV=3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   10.6   0.2     0.001        15       4      27 ..      97     120 ..      94     128 .. 0.86
+
+>> sp|P0DV07|VT2K_HETCR  PI-stichotoxin-Hcr2k (Fragment) OS=Heteractis crispa OX=175771 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   11.8   0.1   0.00043       6.3       5      17 ..       2      14 ..       1      15 [] 0.93
+
+>> sp|Q91845|EPA4A_XENLA  Ephrin type-A receptor 4-A OS=Xenopus laevis OX=8355 GN=epha4-a PE=2 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   10.1   0.1    0.0014        21       4      29 ..     107     132 ..     105     137 .. 0.86
+
+>> sp|Q91694|EPA4B_XENLA  Ephrin type-A receptor 4-B OS=Xenopus laevis OX=8355 GN=epha4-b PE=2 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   10.1   0.1    0.0014        21       4      29 ..     107     132 ..     105     137 .. 0.86
+
+>> sp|P29323|EPHB2_HUMAN  Ephrin type-B receptor 2 OS=Homo sapiens OX=9606 GN=EPHB2 PE=1 SV=5
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   10.0   0.1    0.0015        21       4      27 ..      96     119 ..      93     127 .. 0.85
+
+>> sp|Q90344|EPHB2_COTJA  Ephrin type-B receptor 2 OS=Coturnix japonica OX=93934 GN=EPHB2 PE=2 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   10.6   0.2     0.001        15       4      27 ..      97     120 ..      94     128 .. 0.86
+
+>> sp|Q07496|EPHA4_CHICK  Ephrin type-A receptor 4 OS=Gallus gallus OX=9031 GN=EPHA4 PE=1 SV=2
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   10.1   0.1    0.0014        21       4      29 ..     107     132 ..     105     137 .. 0.86
+   2 ?   -1.7   0.1       6.9     1e+05      10      23 ..     268     281 ..     264     286 .. 0.85
+
+>> sp|P40500|YII9_YEAST  Uncharacterized membrane protein YIL089W OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   10.4   2.4    0.0011        16      20      43 ..      90     113 ..      86     123 .. 0.90
+
+>> sp|P54763|EPHB2_MOUSE  Ephrin type-B receptor 2 OS=Mus musculus OX=10090 GN=Ephb2 PE=1 SV=3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?    9.9   0.1    0.0016        23       4      27 ..      96     119 ..      93     127 .. 0.87
+
+>> sp|Q03137|EPHA4_MOUSE  Ephrin type-A receptor 4 OS=Mus musculus OX=10090 GN=Epha4 PE=1 SV=2
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?    9.7   0.1    0.0019        27       4      28 ..     107     131 ..     105     137 .. 0.86
+   2 ?   -1.0   0.2         4   5.9e+04       9      23 ..     267     281 ..     262     292 .. 0.84
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (58 nodes)
+Target sequences:                     568829  (205652504 residues searched)
+Passed MSV filter:                    568829  (1); expected 568829.0 (1)
+Passed bias filter:                   568829  (1); expected 568829.0 (1)
+Passed Vit filter:                    568829  (1); expected 568829.0 (1)
+Passed Fwd filter:                    568829  (1); expected 568829.0 (1)
+Initial search space (Z):             568829  [actual number of targets]
+Domain search space  (domZ):              39  [number of targets reported over threshold]
+# CPU time: 90.33u 0.43s 00:01:30.76 Elapsed: 00:00:44.84
+# Mc/sec: 265.99
+//
+[ok]

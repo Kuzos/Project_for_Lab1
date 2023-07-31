@@ -1,0 +1,191 @@
+  Codes are written down with comments below them, I made chunks where they are connected to same area. 
+  tail -n +3 ~/Downloads/rcsb_pdb_custom_report_20230421014634.csv |grep -v "^,," |cut -d "," -f 2,3 |tr -d \" |tr "," ":" > list_pdbefold.txt  
+  # cleaning of downloaded report with constrains, we had to clean the proteins that had more then one domain (multidomains).  
+  
+  less list_pdbefold.txt 
+  #Checking if file is okay for PDBEFOLD
+  
+  less fasta.seq 
+  ##Downloaded fasta file from PDBEFOLD multiple alignment of input list_pdbefold  
+ 
+  mv fasta.seq aln_3d.fasta.seq 
+  less aln_3d.fasta.seq
+  #just renaming the file
+ 
+  grep . aln_3d.fasta.seq |less  
+  # Removing all lines between fasta sequences 
+  hmmbuild ali_3d.hmm aln_3d.fasta.seq   
+  # Building HMM model (file ali_3d.hmm)
+
+  cut -b 1-4 list_pdbefold.txt |less 
+  # 33 structures that we have, just extracted PDB codes from whole file 
+  cut -b 1-4 list_pdbefold.txt > ID_mapping.txt 
+  # just redirected output into ID_mapping.txt file, and this file will serve for ID mapping tool in uniprot 
+  wc ID_mapping.txt  
+  # (in this file we have 33 PDB codes)
+ 
+  mv uniprot-download_true_format_list-2023.05.28-16.23.18.37.list list_pdb2uniprot.txt  
+  # Downloaded file after ID mapping tool and renamed it into list_pdb2uniprot.txt 
+  wc list_pdb2uniprot.txt 
+  # This file has 48 codes of uniprot which means that 1 pdb can have more entries in uniprot(swissprot)
+	
+
+  grep ">" kunitz_nonhuman.fasta |wc 
+  # Files that we downloaded from BLAST exercise, this file contains all proteins that have kunitz domain but that are not from human, it has 366           
+    sequences
+  grep ">" kunitz_human.fasta |wc 
+  # This file contains proteins that have kunitz domain and are from human, it has 18 sequences 
+
+  cat kunitz_human.fasta kunitz_nonhuman.fasta |grep ">" |wc   
+  #Concatanation of two files, we are combing them to make positive test dataset, this file has 384 sequences (366+18) 
+  cat kunitz_human.fasta kunitz_nonhuman.fasta >kunitz.fasta 
+  # kunitz.fasta is not fully cleaned file for positive data set that contains 384 sequences.  
+  grep ">" kunitz.fasta |cut -d "|" -f 2 >kunitz.list  
+  # From kunitz.fasta we made a file(kunitz.list) that only contains uniprot codes of all 384 for easier comparison with 48 uniprot codes that we 
+    mapped. 
+
+  man comm 
+  # we used comm function to compare two lists! this is for creating the subset of positives! It is important to mention that this fuction needs 
+    sorted lists
+  sort kunitz.list >sort_kunitz.list  
+  # sorting kunitz.list and saving it as sort_kunitz.list
+  sort list_pdb2uniprot.txt >sort_list_pdb2uniprot.txt
+  #  sorting 48 sequnces we got from mapping ID and saving it as sort_list_pdb2uniprot.txt
+  comm -23 <(sort kunitz.list) <(sort list_pdb2uniprot.txt) |less 
+  # # It also can be done like this sorting in one line and redirecting that output to the comm function. Comm structures the ven diagram as follows,      
+      Column1-only files from first file,Column2-only files from secound file, Column 3-intersection between two. 
+  comm -23 <(sort kunitz.list) <(sort list_pdb2uniprot.txt) |wc 
+  # Now with option -23 we said give us just first column, and with wc check how many sequences (codes) are there, (which is 368).   
+  comm -12 <(sort kunitz.list) <(sort list_pdb2uniprot.txt) |wc 
+  # With this option -12 we said give me the third column (interesection) to check if numbers from first column are correct, from interesection we 
+    had 16 codes which would mean 384-16=368 its correct! 
+  comm -23 <(sort kunitz.list) <(sort list_pdb2uniprot.txt) >kunitz_clean.txt 
+  # This is kunitz_clean.txt test dataset of positives with 368 seq. 
+
+  zcat ~/Downloads/uniprot-compressed_true_download_true_format_fasta-2023.05.28-23.07.25.69.fasta.gz |grep "^>" |wc  
+  # Downloaded from uniprot with mapping ID tool this 368 seq (from UNIPORT AC-ID to the UNIPROT/SWISSPROT) 
+  zcat ~/Downloads/uniprot-compressed_true_download_true_format_fasta-2023.05.28-23.07.25.69.fasta.gz >kunitz_clean.fasta
+  # Just saved output as kunitz_clean.fast 
+  grep "^>" kunitz_clean.fasta |wc 
+  # The file contains 368 seq.
+
+  hmmsearch --max --noali -o kunitz_clean.search ali_3d.hmm kunitz_clean.fasta 
+  # used hmmsearch function (kunitz_clean.search file) but now we have to clean it
+  head -n 385 kunitz_clean.search |tail -n +18 |wc   
+  # We cleaned file by taking everything from 18 line till 385 
+  head -n 385 kunitz_clean.search |tail -n +18 >kunitz_clean.out 
+  #redirected output in kunitz_clean.out
+
+First negative dataset was generated exactly as on lecture, new negative dataset was generated for confirming hypothesis, since procedure
+for both datasets are same I will only explain the secound one(which is downloaded from newer version 2023-02) (because cleaning is not same as on the lectures since it contained more samples).
+  mv ~/Downloads/uniprot-compressed_true_download_true_format_fasta_query__28NOT_20_2-2023.05.28-21.03.13.95.fasta.gz nonkunitz.fasta.gz   
+  #Downloaded negative set and renamed it into non kunitz.fasta (names of files for the 
+   first negative dataset are same structure just they have word orignial to distinguish 
+   between the two 
+  gunzip nonkunitz.fasta.gz  
+  # unziped file    
+  grep ">" nonkunitz.fasta |wc  
+  # number of sequences in new version negative dataset 569126 
+
+  hmmsearch --max --noali -o nonkunitz.search ali_3d.hmm nonkunitz.fasta
+  # as for positive examples, hmmsearch option and now we have to clean file  
+  head -n 51 nonkunitz.search |tail -n +18 |grep -v inclusion |wc 
+  #  Here is the difference in cleaining we took all until 51 line (in first example it was 
+     57 because it contains 6 more sequences) (here we have 33 sequences that matched in clean file in first negative dataset it was 39, and from begging its same in both files we take  
+     from 18th line. 
+  head -n 51 nonkunitz.search |tail -n +18 |grep -v inclusion >nonkunitz.out 
+  # redirected output to nonkunitz!
+	
+  awk '{split($9,a,"|"); print a[2],$4,0}' nonkunitz.out > nonkunitz.class  
+  # cleaining file so we can run python optimization script (basically we extracted ID in first column and e values in 2nd column and third one is 
+    classifier which for negative class will be 0. 
+  awk '{split($9,a,"|"); print a[2],$4,1}' kunitz_clean.out >kunitz.clean.class 
+  # same for the positive set just the class is 1
+   
+  
+  grep ">" nonkunitz.fasta |cut -d "|" -f 2 >nonkunitz.list 
+  # taking the set of codes all others then the one that got matched in hmmsearch function, and put them in file nonkunitz.list (nonkunitz.original.list for the 1st dataset)
+  cut -d " " -f 1 nonkunitz.class |sort >list_hits.txt 
+  #Put these ones also in the code, and sorted them so we can match them with comm function
+  grep ">" nonkunitz.fasta |cut -d "|" -f 2 |sort >nonkunitz.list 
+  # sorted list 
+  comm -23 nonkunitz.list list_hits.txt |awk '{print $0,100,0}' >>nonkunitz.class 
+  # Printed to all ones that are not matched 100 as a e value and added classifer 0 and added them to the 33 structures that got matched with hmmsearch but are same class 0. 
+	
+
+  sort -R nonkunitz_original.class >nonkunitz_final.random  
+  #sorted as random and saved as nonkunitz.final.random (for other negative dataset it will be       
+   nonkunitz.random). wc of nonkunitz.final.random contains 568829 number of seq (just as on lectures). 
+  sort -R kunitz.clean.class >kunitz_clean.random 
+  # sorted as random and saved as following
+  head -n 284413 nonkunitz.random >set_1_final.txt  
+  # first half of the negatives and put into set 1
+  head -n 184 kunitz_clean.random >>set_1_final.txt 
+  # first half of positives and add them into set 1! set 1 is created from half positives and half negatives!
+  tail -n +185 kunitz_clean.random >set_2_final.txt 
+  # secound half of positives is in set 2
+  tail -n 284414 nonkunitz.random >>set_2_final.txt 
+  # secound half of negatives into the set 2. Set 2 is ready
+  wc set_1_final.txt    
+  # first set has 284598  
+  wc set_2_final.txt    
+  # secound set has 284599 (one more example because negative set is uneven number of sequences, with new    
+    dataset they will have equal amount because wc of new negative dataset is even number)
+
+#Runing python script (Optimization.py) on first set for first 20 thresholds 
+for i in `seq 1 20`
+> do
+> python3 Optimization.py set_1_final.txt 1e-$i
+> done
+ 
+#output is as follows for set_2_final.txt:
+
+for i in `seq 1 20`; do python3 Optimization.py set_2_final.txt 1e-$i; done           
+TH: 0.1 ACC: 0.9999859451368417 MCC: 0.9892975485325853 CM: [array([284411.,      0.]), array([  4., 184.])]
+TH: 0.01 ACC: 0.9999929725684208 MCC: 0.9946056281072931 CM: [array([284413.,      0.]), array([  2., 184.])]
+TH: 0.001 ACC: 0.9999894588526312 MCC: 0.9918682917417224 CM: [array([2.84413e+05, 1.00000e+00]), array([  2., 183.])]
+TH: 0.0001 ACC: 0.9999894588526312 MCC: 0.9918682917417224 CM: [array([2.84413e+05, 1.00000e+00]), array([  2., 183.])]
+TH: 1e-05 ACC: 0.9999859451368417 MCC: 0.9891234028046891 CM: [array([2.84413e+05, 2.00000e+00]), array([  2., 182.])]
+TH: 1e-06 ACC: 0.9999859451368417 MCC: 0.9891234028046891 CM: [array([2.84413e+05, 2.00000e+00]), array([  2., 182.])]
+TH: 1e-07 ACC: 0.9999859451368417 MCC: 0.9891234028046891 CM: [array([2.84413e+05, 2.00000e+00]), array([  2., 182.])]
+TH: 1e-08 ACC: 0.9999859451368417 MCC: 0.9891234028046891 CM: [array([2.84413e+05, 2.00000e+00]), array([  2., 182.])]
+TH: 1e-09 ACC: 0.9999859451368417 MCC: 0.9891234028046891 CM: [array([2.84413e+05, 2.00000e+00]), array([  2., 182.])]
+TH: 1e-10 ACC: 0.9999859451368417 MCC: 0.9891234028046891 CM: [array([2.84413e+05, 2.00000e+00]), array([  2., 182.])]
+TH: 1e-11 ACC: 0.9999754039894729 MCC: 0.9808427861949839 CM: [array([2.84413e+05, 5.00000e+00]), array([  2., 179.])]
+TH: 1e-12 ACC: 0.9999683765578937 MCC: 0.9752834335510727 CM: [array([2.84413e+05, 7.00000e+00]), array([  2., 177.])]
+TH: 1e-13 ACC: 0.9999648628421042 MCC: 0.9724918748754365 CM: [array([2.84413e+05, 8.00000e+00]), array([  2., 176.])]
+TH: 1e-14 ACC: 0.9999508079789459 MCC: 0.961196477813056 CM: [array([2.84414e+05, 1.30000e+01]), array([  1., 171.])]
+TH: 1e-15 ACC: 0.9999437805473667 MCC: 0.9555226394188753 CM: [array([2.84414e+05, 1.50000e+01]), array([  1., 169.])]
+TH: 1e-16 ACC: 0.9999367531157874 MCC: 0.9498149934196187 CM: [array([2.84414e+05, 1.70000e+01]), array([  1., 167.])]
+TH: 1e-17 ACC: 0.9999226982526291 MCC: 0.9382958078218222 CM: [array([2.84414e+05, 2.10000e+01]), array([  1., 163.])]
+TH: 1e-18 ACC: 0.9998840473789437 MCC: 0.9058649283864205 CM: [array([2.84414e+05, 3.20000e+01]), array([  1., 152.])]
+TH: 1e-19 ACC: 0.9998594513684166 MCC: 0.8846097353448115 CM: [array([2.84414e+05, 3.90000e+01]), array([  1., 145.])]
+TH: 1e-20 ACC: 0.9998278279263103 MCC: 0.8565086758610033 CM: [array([2.84414e+05, 4.80000e+01]), array([  1., 136.])]
+
+#output as follows for set_1_final.txt
+
+for i in `seq 1 20`; do python3 Optimization.py set_1_final.txt 1e-$i; done         
+TH: 0.1 ACC: 0.9999718901749134 MCC: 0.9789312423879412 CM: [array([284406.,      0.]), array([  8., 184.])]
+TH: 0.01 ACC: 0.9999824313593209 MCC: 0.9866751535423923 CM: [array([284409.,      0.]), array([  5., 184.])]
+TH: 0.001 ACC: 0.9999859450874566 MCC: 0.9892975485081251 CM: [array([284410.,      0.]), array([  4., 184.])]
+TH: 0.0001 ACC: 0.9999859450874566 MCC: 0.9892975485081251 CM: [array([284410.,      0.]), array([  4., 184.])]
+TH: 1e-05 ACC: 0.9999859450874566 MCC: 0.9892975485081251 CM: [array([284410.,      0.]), array([  4., 184.])]
+TH: 1e-06 ACC: 0.9999859450874566 MCC: 0.9892975485081251 CM: [array([284410.,      0.]), array([  4., 184.])]
+TH: 1e-07 ACC: 0.9999789176311851 MCC: 0.9837876272132172 CM: [array([2.8441e+05, 2.0000e+00]), array([  4., 182.])]
+TH: 1e-08 ACC: 0.9999789176311851 MCC: 0.9837876272132172 CM: [array([2.8441e+05, 2.0000e+00]), array([  4., 182.])]
+TH: 1e-09 ACC: 0.9999789176311851 MCC: 0.9837876272132172 CM: [array([2.8441e+05, 2.0000e+00]), array([  4., 182.])]
+TH: 1e-10 ACC: 0.9999789176311851 MCC: 0.9837876272132172 CM: [array([2.8441e+05, 2.0000e+00]), array([  4., 182.])]
+TH: 1e-11 ACC: 0.9999754039030492 MCC: 0.9810211114748307 CM: [array([2.8441e+05, 3.0000e+00]), array([  4., 181.])]
+TH: 1e-12 ACC: 0.9999718901749134 MCC: 0.9782468055599294 CM: [array([2.8441e+05, 4.0000e+00]), array([  4., 180.])]
+TH: 1e-13 ACC: 0.9999648627186417 MCC: 0.9726745573103177 CM: [array([2.8441e+05, 6.0000e+00]), array([  4., 178.])]
+TH: 1e-14 ACC: 0.9999648627186417 MCC: 0.9726745573103177 CM: [array([2.8441e+05, 6.0000e+00]), array([  4., 178.])]
+TH: 1e-15 ACC: 0.9999648627186417 MCC: 0.9726745573103177 CM: [array([2.8441e+05, 6.0000e+00]), array([  4., 178.])]
+TH: 1e-16 ACC: 0.9999543215342342 MCC: 0.9642560716700231 CM: [array([2.8441e+05, 9.0000e+00]), array([  4., 175.])]
+TH: 1e-17 ACC: 0.9999367528935551 MCC: 0.9500602328547808 CM: [array([2.8441e+05, 1.4000e+01]), array([  4., 170.])]
+TH: 1e-18 ACC: 0.9998875606996536 MCC: 0.9091387484815447 CM: [array([2.8441e+05, 2.8000e+01]), array([  4., 156.])]
+TH: 1e-19 ACC: 0.9998664783308386 MCC: 0.8910284913944736 CM: [array([2.8441e+05, 3.4000e+01]), array([  4., 150.])]
+TH: 1e-20 ACC: 0.9998313410494803 MCC: 0.8600017065661951 CM: [array([2.8441e+05, 4.4000e+01]), array([  4., 140.])]
+
+
+
+
